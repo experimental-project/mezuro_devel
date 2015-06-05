@@ -4,7 +4,6 @@
 site 'https://supermarket.getchef.com/api/v1'
 
 cookbook 'build-essential', '~> 2.2.3'
-cookbook 'mysql', '~> 5.5.3'
 cookbook 'vim', '~> 1.1.2'
 cookbook 'nodejs', '~> 2.4.0'
 cookbook 'ruby_rvm', '~> 0.4.9'
