@@ -17,7 +17,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Rails server port
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   # Postgresql server port
-  config.vm.network "forwarded_port", guest: 5432, host: 5432
+  config.vm.network "forwarded_port", guest: 5432, host: 5433
+  # Kalibro processor port
+  config.vm.network "forwarded_port", guest: 8082, host: 8092
+  # Kalibro configuration port
+  config.vm.network "forwarded_port", guest: 8083, host: 8093
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -36,10 +40,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "postgresql::server"
     chef.add_recipe "build-essential"
     chef.add_recipe "nodejs"
+    chef.add_recipe "git"
 
     # Installing Ruby 2.2.2 and Bundle
     # Setting up MySQL
     chef.json = {
+      postgresql: {
+        password: { postgres: "" },
+        config: { "listen_addresses" => '*' },
+        pg_hba: [
+          { type: "local", db: "all", user: "postgres", addr: "", method: "trust" },
+          { type: "local", db: "all", user: "kalibro_processor", addr: "", method: "trust" },
+          { type: "local", db: "all", user: "kalibro_configurations", addr: "", method: "trust" }
+        ]
+      },
       :rvm => {
          'rubies' => ["2.2.2"],
          'default_ruby' => "2.2.2",
@@ -47,4 +61,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
   end
+
+  # Configuration for kalibro processo and configuration
+  config.vm.provision :shell, path: "script/install-kp-kc.sh"
+
 end
