@@ -26,27 +26,49 @@ sudo apt-get update -qq
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y analizo=${ANALIZO_VERSION} subversion git
  
 # Kalibro Processor
+# Cloning
 git clone https://github.com/mezuro/kalibro_processor.git -b v0.5.0 kalibro_processor
 pushd kalibro_processor # Equals 'cd' command
-psql -c "create role kalibro_processor with createdb login password 'kalibro_processor'" -U postgres
-cp config/database.yml.postgresql_sample config/database.yml
-cp config/repositories.yml.sample config/repositories.yml
-export BUNDLE_GEMFILE=$PWD/Gemfile
+# Creating user role kalibro_processor
+sudo psql -c "create role kalibro_processor with createdb login password 'kalibro_processor'" -U postgres
+# Config the database files
+sudo cp config/database.yml.postgresql_sample config/database.yml
+sudo cp config/repositories.yml.sample config/repositories.yml
+# RVM
+rvm use 2.2.2
 bundle install --retry=3
 RAILS_ENV=local bundle exec rake db:setup db:migrate
-RAILS_ENV=local bundle exec rails s -p 8082 -d
+# RAILS_ENV=local bundle exec rails s -p 8082 -d
+# Uncomment if you really needs this
 RAILS_ENV=local bundle exec bin/delayed_job start
-popd # Equals 'cd' command
-export BUNDLE_GEMFILE=""
+popd # Equals 'cd ..' command
  
 # Kalibro Configurations
+# Cloning
 git clone https://github.com/mezuro/kalibro_configurations.git -b v0.1.0 kalibro_configurations
 pushd kalibro_configurations
-psql -c "create role kalibro_configurations with createdb login password 'kalibro_configurations'" -U postgres
-cp config/database.yml.postgresql_sample config/database.yml
-export BUNDLE_GEMFILE=$PWD/Gemfile
+# Creating user role kalibro_configurations
+sudo psql -c "create role kalibro_configurations with createdb login password 'kalibro_configurations'" -U postgres
+# Config the database files
+sudo cp config/database.yml.postgresql_sample config/database.yml
+# RVM
+rvm use 2.2.2
 bundle install --retry=3
 bundle exec rake db:setup db:migrate
-bundle exec rails s -p 8083 -d
+# bundle exec rails s -p 8083 -d
+# Uncomment if you really needs this
 popd
-export BUNDLE_GEMFILE=""
+
+# Prezento
+git clone https://github.com/mezuro/prezento.git -b v0.5.0 prezento
+pushd prezento
+# Config the database files
+sudo cp config/database.yml.sample config/database.yml
+# RVM
+rvm use 2.2.2
+bundle install
+bundle exec rake db:create
+bundle exec rake db:setup
+# bundle exec rails s -b 0.0.0.0
+# Uncomment if you really needs this
+popd
