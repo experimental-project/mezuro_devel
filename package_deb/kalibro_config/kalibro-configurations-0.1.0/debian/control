@@ -4,8 +4,9 @@ Priority: extra
 Maintainer: Rafael Reggiani Manzo <rr.manzo@gmail.com>
 Build-Depends: debhelper (>= 9.0.0)
 Standards-Version: 3.9.2
+XS-Ruby-Versions: ruby2.2
 
 Package: kalibro-configurations
 Architecture: all
-Depends: postgresql-9.3,curl,build-essential,ruby (>= 2.2.2),rails (>= 4.2),${misc:Depends}
+Depends: postgresql-9.3,curl,build-essential,ruby (>= 2.2.2),${misc:Depends}
 Description: Is a source code analysis configuration web service
