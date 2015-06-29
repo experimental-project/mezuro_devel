@@ -1,0 +1,16 @@
+Source: kalibro-configurations
+Section: ruby
+Priority: extra
+Maintainer: Paulo Tada <paulohtfs@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: http://mezuro.org/pt
+#Vcs-Git: git://git.debian.org/collab-maint/kalibro-configurations.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/kalibro-configurations.git;a=summary
+XS-Ruby-Versions: ruby1.9.1
+
+Package: kalibro-configurations
+Architecture: all
+Depends: ${misc:Depends}, debconf, postgresql-server-dev-9.3, libruby1.9.1, ruby1.9.1-dev, libv8-dev, rake, ruby-jquery-rails, ruby-sass-rails, ruby-rmagick, curl, build-essential
+Description: code analysis web service
+ Kalibro Configurations is a source code analysis configuration web service.

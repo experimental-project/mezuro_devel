@@ -1,0 +1,11 @@
+Package: kalibro-configurations
+Version: 0.1-1
+Architecture: all
+Maintainer: Paulo Tada <paulohtfs@gmail.com>
+Installed-Size: 245
+Depends: debconf, postgresql-server-dev-9.3, libruby1.9.1, ruby1.9.1-dev, libv8-dev, rake, ruby-jquery-rails, ruby-sass-rails, ruby-rmagick, curl, build-essential
+Section: ruby
+Priority: extra
+Homepage: http://mezuro.org/pt
+Description: code analysis web service
+ Kalibro Configurations is a source code analysis configuration web service.
