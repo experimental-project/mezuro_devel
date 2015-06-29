@@ -1,0 +1,153 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package kalibro-configurations
+dpkg-buildpackage: source version 0.1-1
+dpkg-buildpackage: source changed by Paulo Tada <paulohtfs@gmail.com>
+ dpkg-source --before-build kalibro-configurations-0.1
+dpkg-buildpackage: host architecture i386
+ fakeroot debian/rules clean
+dh clean --buildsystem=ruby --with ruby
+   dh_testdir -O--buildsystem=ruby
+   dh_auto_clean -O--buildsystem=ruby
+  Entering dh_ruby --clean
+  Leaving dh_ruby --clean
+   dh_clean -O--buildsystem=ruby
+ dpkg-source -b kalibro-configurations-0.1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building kalibro-configurations using existing ./kalibro-configurations_0.1.orig.tar.xz
+dpkg-source: info: building kalibro-configurations in kalibro-configurations_0.1-1.debian.tar.gz
+dpkg-source: info: building kalibro-configurations in kalibro-configurations_0.1-1.dsc
+ debian/rules build
+dh build --buildsystem=ruby --with ruby
+   dh_testdir -O--buildsystem=ruby
+   dh_auto_configure -O--buildsystem=ruby
+   dh_auto_build -O--buildsystem=ruby
+   dh_auto_test -O--buildsystem=ruby
+ fakeroot debian/rules binary
+dh binary --buildsystem=ruby --with ruby
+   dh_testroot -O--buildsystem=ruby
+   dh_prep -O--buildsystem=ruby
+   dh_installdirs -O--buildsystem=ruby
+   debian/rules override_dh_auto_install
+make[1]: Entering directory `/vagrant/kalibro-configurations-0.1'
+dh_auto_install
+  Entering dh_ruby --install
+install -d /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin
+install -D -m755 bin/spring /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/spring
+install -D -m755 bin/cucumber /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/cucumber
+install -D -m755 bin/rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rake
+install -D -m755 bin/rails /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rails
+install -D -m755 bin/setup /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/setup
+install -D -m755 bin/bundle /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/bundle
+install -d /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby
+install -D -m644 lib/tasks/konacha.rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby/tasks/konacha.rake
+install -D -m644 lib/tasks/cucumber.rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby/tasks/cucumber.rake
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/spring
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/cucumber
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rake
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rails
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/setup
+Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/bundle
+/usr/bin/ruby1.9.1 -I/usr/lib/ruby/vendor_ruby /usr/lib/ruby/vendor_ruby/gem2deb/test_runner.rb
+Running tests for ruby1.9.1: found no way to run a test suite!
+  Leaving dh_ruby --install
+./bin/setup
+== Installing dependencies ==
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied - /var/lib/gems
+sh: 1: bundle: not found
+sh: 1: bundle: not found
+
+== Copying sample files ==
+
+== Preparing database ==
+bin/rake:6: undefined method `require_relative' for main:Object (NoMethodError)
+
+== Removing old logs and tempfiles ==
+
+== Restarting application server ==
+touch: cannot touch `tmp/restart.txt': No such file or directory
+make[1]: Leaving directory `/vagrant/kalibro-configurations-0.1'
+   dh_install -O--buildsystem=ruby
+   dh_installdocs -O--buildsystem=ruby
+   dh_installchangelogs -O--buildsystem=ruby
+   dh_installexamples -O--buildsystem=ruby
+   dh_installman -O--buildsystem=ruby
+   dh_installcatalogs -O--buildsystem=ruby
+   dh_installcron -O--buildsystem=ruby
+   dh_installdebconf -O--buildsystem=ruby
+   dh_installemacsen -O--buildsystem=ruby
+   dh_installifupdown -O--buildsystem=ruby
+   dh_installinfo -O--buildsystem=ruby
+   dh_installinit -O--buildsystem=ruby
+   dh_installmenu -O--buildsystem=ruby
+   dh_installmime -O--buildsystem=ruby
+   dh_installmodules -O--buildsystem=ruby
+   dh_installlogcheck -O--buildsystem=ruby
+   dh_installlogrotate -O--buildsystem=ruby
+   dh_installpam -O--buildsystem=ruby
+   dh_installppp -O--buildsystem=ruby
+   dh_installudev -O--buildsystem=ruby
+   dh_installwm -O--buildsystem=ruby
+   dh_installxfonts -O--buildsystem=ruby
+   dh_installgsettings -O--buildsystem=ruby
+   dh_bugfiles -O--buildsystem=ruby
+   dh_ucf -O--buildsystem=ruby
+   dh_lintian -O--buildsystem=ruby
+   dh_gconf -O--buildsystem=ruby
+   dh_icons -O--buildsystem=ruby
+   dh_perl -O--buildsystem=ruby
+   dh_usrlocal -O--buildsystem=ruby
+   dh_link -O--buildsystem=ruby
+   dh_compress -X.rb -O--buildsystem=ruby
+   dh_fixperms -O--buildsystem=ruby
+   dh_installdeb -O--buildsystem=ruby
+   dh_gencontrol -O--buildsystem=ruby
+dpkg-gencontrol: warning: package kalibro-configurations: unused substitution variable ${ruby:Versions}
+   dh_md5sums -O--buildsystem=ruby
+   dh_builddeb -O--buildsystem=ruby
+dpkg-deb: building package `kalibro-configurations' in `../kalibro-configurations_0.1-1_all.deb'.
+ dpkg-genchanges  >../kalibro-configurations_0.1-1_i386.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build kalibro-configurations-0.1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+W: kalibro-configurations source: dh-make-template-in-source debian/init.d.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/kalibro-configurations.cron.d.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/kalibro-configurations.default.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/kalibro-configurations.doc-base.EX
+W: kalibro-configurations source: dh-make-template-in-source debian/manpage.1.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/manpage.sgml.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/manpage.xml.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/menu.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/postinst.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/postrm.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/preinst.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/prerm.ex
+W: kalibro-configurations source: dh-make-template-in-source debian/watch.ex
+E: kalibro-configurations source: missing-build-dependency-for-dh-addon ruby => gem2deb
+W: kalibro-configurations source: package-needs-versioned-debhelper-build-depends 9
+W: kalibro-configurations source: newer-standards-version 3.9.4 (current is 3.9.3)
+W: kalibro-configurations: new-package-should-close-itp-bug
+E: kalibro-configurations: helper-templates-in-copyright
+W: kalibro-configurations: copyright-has-url-from-dh_make-boilerplate
+E: kalibro-configurations: copyright-contains-dh_make-todo-boilerplate
+W: kalibro-configurations: readme-debian-contains-debmake-template
+W: kalibro-configurations: binary-without-manpage usr/bin/bundle
+W: kalibro-configurations: binary-without-manpage usr/bin/cucumber
+W: kalibro-configurations: binary-without-manpage usr/bin/rails
+W: kalibro-configurations: binary-without-manpage usr/bin/rake
+W: kalibro-configurations: binary-without-manpage usr/bin/setup
+W: kalibro-configurations: binary-without-manpage usr/bin/spring
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/bundle
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/cucumber
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/rails
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/rake
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/setup
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/bin/spring
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/bundle
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/cucumber
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/rails
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/rake
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/setup
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/spring
+Finished running lintian.

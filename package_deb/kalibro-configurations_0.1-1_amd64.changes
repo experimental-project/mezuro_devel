@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 28 Jun 2015 23:47:52 +0000
+Source: kalibro-configurations
+Binary: kalibro-configurations
+Architecture: source all
+Version: 0.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: Paulo Tada <paulohtfs@gmail.com>
+Changed-By: Paulo Tada <paulohtfs@gmail.com>
+Description: 
+ kalibro-configurations - code analysis web service
+Changes: 
+ kalibro-configurations (0.1-1) unstable; urgency=low
+ .
+   * Initial release
+Checksums-Sha1: 
+ 42acdc8d37dc250097d7c29e61a6b83a99453728 919 kalibro-configurations_0.1-1.dsc
+ c1feca49cf81be82fe8f89e788bfbcd401e813a7 368944 kalibro-configurations_0.1.orig.tar.xz
+ ca660dce47f1fa80b0c664ff7cb0876641a14262 10456 kalibro-configurations_0.1-1.debian.tar.gz
+ 2aa367a660c3debbc7cc9e092d1c7b5ce105ec90 3582 kalibro-configurations_0.1-1_all.deb
+Checksums-Sha256: 
+ 77d68994eb57ad523c22547170ab09d05e607c02b07a4f01e820aa5c97111a61 919 kalibro-configurations_0.1-1.dsc
+ d7f4a0d47f80f50d0d4e871465ce913b12437d337b7f2440668a3857a22c0e92 368944 kalibro-configurations_0.1.orig.tar.xz
+ 9827cfb295a6af042399d7484a47d00141c95c772687a1b311595c906a4cd9f4 10456 kalibro-configurations_0.1-1.debian.tar.gz
+ c4dc41bd7b8bb3c7188ecb3c1b184b758d0ecc0d2f2018b4579d0dd0831576fb 3582 kalibro-configurations_0.1-1_all.deb
+Files: 
+ a4edbbdb378a071e45991c8406e35849 919 ruby extra kalibro-configurations_0.1-1.dsc
+ 577599dd70ef1f0ca19f9dc6a25d40ec 368944 ruby extra kalibro-configurations_0.1.orig.tar.xz
+ 34849a2fe26859a203eee431a676a3d7 10456 ruby extra kalibro-configurations_0.1-1.debian.tar.gz
+ 7c85cbbbd54e89d2c89f6f5e4ab06d84 3582 ruby extra kalibro-configurations_0.1-1_all.deb
