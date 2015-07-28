@@ -1,1 +1,0 @@
-{"license":"Apache v2.0","tarball_file_size":9275,"version":"0.4.9","average_rating":null,"cookbook":"https://supermarket.getchef.com/api/v1/cookbooks/ruby_rvm","file":"https://supermarket.getchef.com/api/v1/cookbooks/ruby_rvm/versions/0.4.9/download","dependencies":{"chef_gem":">= 0.0.0","bsw_gpg":">= 0.0.0","apt":">= 0.0.0","sudo":">= 0.0.0"}}
