@@ -43,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "git"
 
     # Installing Ruby 2.2.2 and Bundle
-    # Setting up MySQL
+    # Setting up PostgreSQL
     chef.json = {
       postgresql: {
         password: { postgres: "" },

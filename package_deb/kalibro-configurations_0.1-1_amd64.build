@@ -6,66 +6,87 @@ dpkg-buildpackage: source changed by Paulo Tada <paulohtfs@gmail.com>
  dpkg-source --before-build kalibro-configurations-0.1
 dpkg-buildpackage: host architecture amd64
  fakeroot debian/rules clean
-dh clean --buildsystem=ruby --with ruby
-   dh_testdir -O--buildsystem=ruby
-   dh_auto_clean -O--buildsystem=ruby
-  Entering dh_ruby --clean
-  Leaving dh_ruby --clean
-   dh_clean -O--buildsystem=ruby
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
  dpkg-source -b kalibro-configurations-0.1
 dpkg-source: info: using source format `3.0 (quilt)'
 dpkg-source: info: building kalibro-configurations using existing ./kalibro-configurations_0.1.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file Makefile
 dpkg-source: info: building kalibro-configurations in kalibro-configurations_0.1-1.debian.tar.gz
 dpkg-source: info: building kalibro-configurations in kalibro-configurations_0.1-1.dsc
  debian/rules build
-dh build --buildsystem=ruby --with ruby
-   dh_testdir -O--buildsystem=ruby
-   dh_auto_configure -O--buildsystem=ruby
-   dh_auto_build -O--buildsystem=ruby
-   dh_auto_test -O--buildsystem=ruby
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
  fakeroot debian/rules binary
-dh binary --buildsystem=ruby --with ruby
-   dh_testroot -O--buildsystem=ruby
-   dh_prep -O--buildsystem=ruby
+dh binary 
+   dh_testroot
+   dh_prep
    debian/rules override_dh_auto_install
 make[1]: Entering directory `/vagrant/kalibro-configurations-0.1'
 dh_auto_install
-  Entering dh_ruby --install
-install -d /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/spring /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/spring
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/cucumber /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/cucumber
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rake
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/rails /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rails
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/setup /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/setup
-install -D -m755 /vagrant/kalibro-configurations-0.1/bin/bundle /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/bundle
-install -d /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby
-install -D -m644 /vagrant/kalibro-configurations-0.1/lib/tasks/konacha.rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby/tasks/konacha.rake
-install -D -m644 /vagrant/kalibro-configurations-0.1/lib/tasks/cucumber.rake /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/lib/ruby/vendor_ruby/tasks/cucumber.rake
-/usr/lib/ruby/vendor_ruby/gem2deb.rb:57:in `system': can't convert nil into String (TypeError)
-	from /usr/lib/ruby/vendor_ruby/gem2deb.rb:57:in `run'
-	from /usr/lib/ruby/vendor_ruby/gem2deb/dh_ruby.rb:139:in `run_tests_for_version'
-	from /usr/lib/ruby/vendor_ruby/gem2deb/dh_ruby.rb:129:in `block in run_tests'
-	from /usr/lib/ruby/vendor_ruby/gem2deb/dh_ruby.rb:128:in `each'
-	from /usr/lib/ruby/vendor_ruby/gem2deb/dh_ruby.rb:128:in `run_tests'
-	from /usr/lib/ruby/vendor_ruby/gem2deb/dh_ruby.rb:72:in `install'
-	from /usr/bin/dh_ruby:69:in `block (2 levels) in <main>'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1360:in `call'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1360:in `block in parse_in_order'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1347:in `catch'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1347:in `parse_in_order'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1341:in `order!'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1432:in `permute!'
-	from /usr/lib/ruby/1.9.1/optparse.rb:1453:in `parse!'
-	from /usr/bin/dh_ruby:73:in `<main>'
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/spring
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/cucumber
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rake
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/rails
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/setup
-Rewriting shebang line of /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations/usr/bin/bundle
- -I/usr/lib/ruby/vendor_ruby /usr/lib/ruby/vendor_ruby/gem2deb/test_runner.rb
-dh_auto_install: dh_ruby --install /vagrant/kalibro-configurations-0.1/debian/kalibro-configurations returned exit code 1
-make[1]: *** [override_dh_auto_install] Error 1
+./bin/setup
+== Installing dependencies ==
+sh: 1: bundle: not found
+sh: 1: bundle: not found
+
+== Copying sample files ==
+
+== Preparing database ==
+/var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/spec_set.rb:92:in `block in materialize': Could not find rake-10.4.2 in any of the sources (Bundler::GemNotFound)
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/spec_set.rb:85:in `map!'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/spec_set.rb:85:in `materialize'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/definition.rb:140:in `specs'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/definition.rb:185:in `specs_for'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/definition.rb:174:in `requested_specs'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/environment.rb:18:in `requested_specs'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/runtime.rb:13:in `setup'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler.rb:127:in `setup'
+	from /var/lib/gems/1.9.1/gems/bundler-1.10.5/lib/bundler/setup.rb:18:in `<top (required)>'
+	from /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /vagrant/kalibro-configurations-0.1/config/boot.rb:3:in `<top (required)>'
+	from bin/rake:6:in `require_relative'
+	from bin/rake:6:in `<main>'
+
+== Removing old logs and tempfiles ==
+
+== Restarting application server ==
+touch: cannot touch ‘tmp/restart.txt’: No such file or directory
 make[1]: Leaving directory `/vagrant/kalibro-configurations-0.1'
-make: *** [binary] Error 2
-dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit status 2
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `kalibro-configurations' in `../kalibro-configurations_0.1-1_all.deb'.
+ dpkg-genchanges  >../kalibro-configurations_0.1-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build kalibro-configurations-0.1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: kalibro-configurations changes: bad-distribution-in-changes-file unstable
+W: kalibro-configurations source: dh-make-template-in-source debian/watch.ex
+W: kalibro-configurations source: package-needs-versioned-debhelper-build-depends 9
+W: kalibro-configurations source: out-of-date-standards-version 3.9.4 (current is 3.9.5)
+W: kalibro-configurations: new-package-should-close-itp-bug
+E: kalibro-configurations: helper-templates-in-copyright
+W: kalibro-configurations: copyright-has-url-from-dh_make-boilerplate
+E: kalibro-configurations: copyright-contains-dh_make-todo-boilerplate
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/bundle
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/cucumber
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/rails
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/rake
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/setup
+E: kalibro-configurations: ruby-script-but-no-ruby-dep usr/share/kalibro-configuration/bin/spring
+Finished running lintian.

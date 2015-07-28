@@ -40,7 +40,7 @@ sudo cp config/repositories.yml.sample config/repositories.yml
 rvm use 2.2.2
 bundle install --retry=3
 RAILS_ENV=local bundle exec rake db:setup db:migrate
-# Uncomment if you really needs this
+# Uncomment if you wants to starts the server
 # RAILS_ENV=local bundle exec rails s -p 8082 -d
 RAILS_ENV=local bundle exec bin/delayed_job start
 popd # Equals 'cd ..' command
@@ -59,7 +59,8 @@ sudo cp config/database.yml.postgresql_sample config/database.yml
 rvm use 2.2.2
 bundle install --retry=3
 bundle exec rake db:setup db:migrate
-bundle exec rails s -p 8083 -d
+# Uncomment if you wants to starts the server
+# bundle exec rails s -p 8083 -d
 popd
 
 # Prezento

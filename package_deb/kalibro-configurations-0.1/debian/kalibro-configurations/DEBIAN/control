@@ -2,8 +2,8 @@ Package: kalibro-configurations
 Version: 0.1-1
 Architecture: all
 Maintainer: Paulo Tada <paulohtfs@gmail.com>
-Installed-Size: 245
-Depends: debconf, postgresql-server-dev-9.3, libruby1.9.1, ruby1.9.1-dev, libv8-dev, rake, ruby-jquery-rails, ruby-sass-rails, ruby-rmagick, curl, build-essential
+Installed-Size: 217
+Depends: debconf, beep, barcode, udev, libruby2.0, ruby2.0-dev, ruby-rack, ruby-mysql2, ruby-kramdown, ruby-jquery-rails, ruby-haml, ruby-sass, ruby-sass-rails, ruby-coffee-rails, ruby-rmagick, ruby-uglifier, ruby-nokogiri, ruby-mechanize, ruby-json, libv8-dev, curl, build-essential, postgresql-9.3
 Section: ruby
 Priority: extra
 Homepage: http://mezuro.org/pt

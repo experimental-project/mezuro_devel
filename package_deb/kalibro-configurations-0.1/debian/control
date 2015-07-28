@@ -11,6 +11,6 @@ XS-Ruby-Versions: ruby1.9.1
 
 Package: kalibro-configurations
 Architecture: all
-Depends: ${misc:Depends}, debconf, postgresql-server-dev-9.3, libruby1.9.1, ruby1.9.1-dev, libv8-dev, rake, ruby-jquery-rails, ruby-sass-rails, ruby-rmagick, curl, build-essential
+Depends: ${misc:Depends}, debconf, beep, barcode, udev, libruby2.0, ruby2.0-dev, ruby-rack, ruby-mysql2, ruby-kramdown, ruby-jquery-rails, ruby-haml, ruby-sass, ruby-sass-rails, ruby-coffee-rails, ruby-rmagick, ruby-uglifier, ruby-nokogiri, ruby-mechanize, ruby-json, libv8-dev, curl, build-essential, postgresql-9.3
 Description: code analysis web service
  Kalibro Configurations is a source code analysis configuration web service.

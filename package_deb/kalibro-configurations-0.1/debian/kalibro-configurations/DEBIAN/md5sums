@@ -1,15 +1,7 @@
-97725ad0ce324a84e3621478d8fdb827  usr/bin/bundle
-e9904353952288e659ae35a6cb02784a  usr/bin/cucumber
-ed857a2f509eed55a96c3f1f413de3b5  usr/bin/rails
-f15c75cbbd53dfbdc070a667a78663f3  usr/bin/rake
-85e342b7307b79c06fe416cfdf3edb34  usr/bin/setup
-f51889ac4e819ef6e1227a19ff5c2b2f  usr/bin/spring
-1ebf9d5cd7f480e465b30c31a10b1b0b  usr/lib/ruby/vendor_ruby/tasks/cucumber.rake
-c4d8d507fb446d8eb746e26e6c0c6660  usr/lib/ruby/vendor_ruby/tasks/konacha.rake
-a0b9273ce529a6178edd99205ed7ea62  usr/share/doc/kalibro-configurations/README.Debian
-d7b93acea74100cbd9edfbc0406862ce  usr/share/doc/kalibro-configurations/README.rdoc
 e5d2439180a1d5f39e020f2a7055a287  usr/share/doc/kalibro-configurations/changelog.Debian.gz
 52b2d0a43cc1223f72200710b33c053b  usr/share/doc/kalibro-configurations/copyright
+4abd4288247a72c35e9f8c2c72b8c837  usr/share/kalibro-configuration/.ruby-gemset
+52c2394447b78e7b757c85d16185275f  usr/share/kalibro-configuration/.ruby-version
 7d02d5c0b39aa7cbb9f52a60d48a8ebb  usr/share/kalibro-configuration/Capfile
 9c306b32ccc61563c3f0a9f2eca6ce67  usr/share/kalibro-configuration/Gemfile
 3f56a3a454f385b883652b625e9e51f0  usr/share/kalibro-configuration/Rakefile

@@ -7,3 +7,5 @@ public/ usr/share/kalibro-configuration/
 Rakefile usr/share/kalibro-configuration/
 Capfile usr/share/kalibro-configuration/
 Gemfile usr/share/kalibro-configuration/
+.ruby-gemset usr/share/kalibro-configuration/
+.ruby-version usr/share/kalibro-configuration/
