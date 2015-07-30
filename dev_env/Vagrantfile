@@ -11,16 +11,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "chef/ubuntu-14.04"
 
-  config.omnibus.chef_version = "11.16"
-
   # Create a forwarded port mapping which allows access to a specific port
   # Rails server port
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   # Postgresql server port
+  # Uncomment this in case that you want to access postgresql from you host machine
   config.vm.network "forwarded_port", guest: 5432, host: 5433
   # Kalibro processor port
+  # Uncomment this in case that you want to access kalibro processor from you host machine
   config.vm.network "forwarded_port", guest: 8082, host: 8092
   # Kalibro configuration port
+  # Uncomment this in case that you want to access kalibro configurations from you host machine
   config.vm.network "forwarded_port", guest: 8083, host: 8093
 
   # Share an additional folder to the guest VM. The first argument is
