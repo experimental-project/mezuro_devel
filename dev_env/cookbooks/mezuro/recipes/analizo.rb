@@ -1,6 +1,8 @@
-# All the system depends on Analizo
-# The next lines execute the process to install Analizo
+# This recipe install Analizo
+# 
+# Analizo is a multi-language source code analysis suite
 # More about http://www.analizo.org/
+
 ANALIZO_VERSION='1.18.1'
 
 execute 'add_repo_key' do

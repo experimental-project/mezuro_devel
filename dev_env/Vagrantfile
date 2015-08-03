@@ -36,19 +36,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = ["cookbooks"]
     chef.add_recipe "mezuro"
     chef.add_recipe "mezuro::analizo"
+    chef.add_recipe "mezuro::kalibro_processor"
 
     # Setting up Ruby 2.2.2, Bundle and PostgreSQL
     chef.json = {
       postgresql: {
         password: { postgres: "" },
-        config: { "listen_addresses" => '*' },
-        pg_hba: [
-          { type: "local", db: "all", user: "postgres", addr: "", method: "trust" },
-          { type: "local", db: "all", user: "kalibro_processor", addr: "", method: "trust" },
-          { type: "local", db: "all", user: "kalibro_configurations", addr: "", method: "trust" }
-        ]
+        config: { "listen_addresses" => '*' }
       },
       :rvm => {
+         'rubies' => ["2.2.2"],
+         'default_ruby' => "2.2.2",
          :vagrant => { :system_chef_solo => "/opt/chef/bin/chef-solo" }
       }
     }
