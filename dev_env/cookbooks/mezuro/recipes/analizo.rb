@@ -1,0 +1,21 @@
+# All the system depends on Analizo
+# The next lines execute the process to install Analizo
+# More about http://www.analizo.org/
+ANALIZO_VERSION='1.18.1'
+
+execute 'add_repo_key' do
+	command 'wget -O - http://www.analizo.org/download/signing-key.asc | apt-key add -'
+	action :nothing
+end
+
+cookbook_file '/etc/apt/sources.list.d/analizo.list' do
+	owner 'root'
+	group 'root'
+	mode 0644
+	notifies :run, 'execute[add_repo_key]', :immediately
+	notifies :run, 'execute[apt_update]', :immediately
+end
+
+execute 'install analizo' do
+	command "DEBIAN_FRONTEND=noninteractive apt-get install -y analizo=#{ANALIZO_VERSION} subversion git"
+end

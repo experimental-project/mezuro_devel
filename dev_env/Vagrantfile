@@ -33,18 +33,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Configuration for cooking with chef
   config.vm.provision :chef_solo do |chef|
     # Cooking :)
-    chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
-    chef.add_recipe "nodejs"
-    chef.add_recipe "vim"
-    chef.add_recipe "rvm::system"
-    chef.add_recipe "rvm::vagrant"
-    chef.add_recipe "postgresql::server"
-    chef.add_recipe "build-essential"
-    chef.add_recipe "nodejs"
-    chef.add_recipe "git"
+    chef.cookbooks_path = ["cookbooks"]
+    chef.add_recipe "mezuro"
+    chef.add_recipe "mezuro::analizo"
 
-    # Installing Ruby 2.2.2 and Bundle
-    # Setting up PostgreSQL
+    # Setting up Ruby 2.2.2, Bundle and PostgreSQL
     chef.json = {
       postgresql: {
         password: { postgres: "" },
@@ -56,14 +49,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ]
       },
       :rvm => {
-         'rubies' => ["2.2.2"],
-         'default_ruby' => "2.2.2",
          :vagrant => { :system_chef_solo => "/opt/chef/bin/chef-solo" }
       }
     }
   end
 
   # Configuration for kalibro processo and configuration
-  config.vm.provision :shell, path: "script/install-kp-kc.sh"
+  # config.vm.provision :shell, path: "script/install-kp-kc.sh"
 
 end
