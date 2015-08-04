@@ -1,0 +1,9 @@
+[submodule "kalibro_configurations"]
+	path = kalibro_configurations
+	url = https://github.com/mezuro/kalibro_configurations.git
+[submodule "kalibro_processor"]
+	path = kalibro_processor
+	url = https://github.com/mezuro/kalibro_processor.git
+[submodule "prezento"]
+	path = prezento
+	url = https://github.com/mezuro/prezento.git
