@@ -1,2 +1,0 @@
-class NativeMetricSnapshot < MetricSnapshot
-end

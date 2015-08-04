@@ -1,2 +1,0 @@
-class CompoundMetricSnapshot < MetricSnapshot
-end
