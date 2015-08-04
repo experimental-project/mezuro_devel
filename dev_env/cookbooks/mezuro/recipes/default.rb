@@ -32,12 +32,6 @@ execute 'apt_upgrade' do
 	action :nothing
 end
 
-# Restart service PostgreSQL
-execute 'postgres_reload' do
-	command 'service postgresql restart'
-	action :nothing
-end
-
 template '/etc/postgresql/9.3/main/pg_hba.conf' do
 	owner 'postgres'
 	group 'postgres'
@@ -45,5 +39,9 @@ template '/etc/postgresql/9.3/main/pg_hba.conf' do
 	variables({
 		users: 		node['mezuro']['postgresql']['users']
 		})
-	notifies :run, 'execute[postgres_reload]', :immediately
+end
+
+# PostgreSQL Service
+service "postgresql" do
+  action :restart
 end
