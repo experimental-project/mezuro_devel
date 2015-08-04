@@ -20,6 +20,7 @@ package "curl"
 package "git"
 package "nodejs"
 package "npm"
+package "tmux"
 
 # Defining some usefull command
 execute 'apt_update' do
@@ -39,9 +40,11 @@ template '/etc/postgresql/9.3/main/pg_hba.conf' do
 	variables({
 		users: 		node['mezuro']['postgresql']['users']
 		})
+	notifies :restart, 'service[postgresql]'
 end
 
-# PostgreSQL Service
-service "postgresql" do
-  action :restart
+# Git submodules [init, update]
+execute 'git submodules (init,update)' do
+	cwd node[:mezuro][:shared]
+	command "git submodule init && git submodule update"
 end

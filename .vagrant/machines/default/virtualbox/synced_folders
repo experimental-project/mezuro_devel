@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/paulo/workspace/mezuro_devel","disabled":false},"v-csc-1":{"id":"v-csc-1","guestpath":"/tmp/vagrant-chef/b9d2a4720b9b9f04259c1e106fa4e6bc/cookbooks","hostpath":"/home/paulo/workspace/mezuro_devel/cookbooks","disabled":false}}}

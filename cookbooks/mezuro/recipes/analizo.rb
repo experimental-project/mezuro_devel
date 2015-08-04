@@ -3,7 +3,7 @@
 # Analizo is a multi-language source code analysis suite
 # More about http://www.analizo.org/
 
-ANALIZO_VERSION='1.18.1'
+ANALIZO_VERSION = node[:mezuro][:analizo][:version]
 
 execute 'add_repo_key' do
 	command 'wget -O - http://www.analizo.org/download/signing-key.asc | apt-key add -'

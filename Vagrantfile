@@ -37,6 +37,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "mezuro"
     chef.add_recipe "mezuro::analizo"
     chef.add_recipe "mezuro::kalibro_processor"
+    chef.add_recipe "mezuro::kalibro_configurations"
+    chef.add_recipe "mezuro::prezento"
 
     # Setting up Ruby 2.2.2, Bundle and PostgreSQL
     chef.json = {
