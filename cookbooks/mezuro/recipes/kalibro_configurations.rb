@@ -40,6 +40,5 @@ bash 'config and run kalibro_configurations' do
 	cwd CONFIGURATIONS_PATH
 	code <<-EOH
 	bundle exec rake db:setup db:migrate
-	bundle exec rails s -p 8083 -d
 	EOH
 end

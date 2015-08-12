@@ -23,6 +23,5 @@ bash 'config and run kalibro_processor' do
 	code <<-EOH
 	bundle exec rake db:create
 	bundle exec rake db:setup
-	bundle exec rails s -b 0.0.0.0 -d
 	EOH
 end

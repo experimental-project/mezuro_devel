@@ -47,7 +47,5 @@ bash 'config and run kalibro_processor' do
 	cwd PROCESSOR_PATH
 	code <<-EOH
 	RAILS_ENV=local bundle exec rake db:setup db:migrate
-	RAILS_ENV=local bundle exec rails s -p 8082 -d
-	RAILS_ENV=local bundle exec bin/delayed_job start
 	EOH
 end
